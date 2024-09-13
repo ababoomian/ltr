@@ -27,7 +27,7 @@ def main():
                 print("Failed to read valid sensor data.")
 
             # Sleep for 10 seconds before the next read
-            time.sleep(10)
+            time.sleep(2)
 
     except KeyboardInterrupt:
         print("Application terminated by user.")

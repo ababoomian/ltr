@@ -34,7 +34,7 @@ class LightSensor:
                 self.sensor = adafruit_ltr390.LTR390(self.i2c)
 
                 # Set resolution to 20-bit and gain to 3x (similar to the C++ example)
-                self.sensor.resolution = Resolution.RESOLUTION_18BIT
+                self.sensor.resolution = Resolution.RESOLUTION_16BIT
                 self.sensor.gain = Gain.GAIN_3X
 
                 # Set to UV mode (similar to setMode in the C++ code)
@@ -70,6 +70,7 @@ class LightSensor:
             except Exception as e:
                 print(f"Unhandled exception while reading LTR390: {e}", exc_info=True)
             else:
+                # data["uv"] = round(uvi)
                 data["uv"] = uvi
                 data["lux"] = lux
 
